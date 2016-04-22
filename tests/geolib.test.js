@@ -372,6 +372,22 @@
 
     });
 
+    test("Testing: isCircleIntersectsPolygon()", function() {
+
+        var isIntersects1 = geolib.isCircleIntersectsPolygon({latitude: 51.515400598, longitude: 7.45718541}, 60, polygon2);
+        var isIntersects2 = geolib.isCircleIntersectsPolygon({latitude: 51.517143592, longitude: 7.463232037}, 100, polygon2);
+        var isIntersects3 = geolib.isCircleIntersectsPolygon({latitude: 51.516592545, longitude: 7.459653183}, 120, polygon2);
+        var isIntersects4 = geolib.isCircleIntersectsPolygon({latitude: 51.518357512, longitude: 7.45574331}, 160, polygon2);
+        var isIntersects5 = geolib.isCircleIntersectsPolygon({latitude: 51.516057512, longitude: 7.45774331}, 500, polygon2);
+
+        ok(isIntersects1, "Point 1 is inside polygon");
+        ok(isIntersects2, "Point 2 is inside polygon");
+        ok(isIntersects3, "Point 3 is inside polygon");
+        ok(isIntersects4, "Point 4 is inside polygon");
+        ok(!isIntersects5, "Point 5 is not inside polygon");
+
+    });
+
     test("Testing: isPointInsideWithPreparedPolygon()", function() {
 
         geolib.preparePolygonForIsPointInsideOptimized(polygon);

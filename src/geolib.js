@@ -715,6 +715,20 @@
 
 
         /**
+         * Checks whether a circle intersects a polygon or not.
+         *
+         * @param        object      coordinate to check e.g. {latitude: 51.5023, longitude: 7.3815}
+         * @param        integer     radius in meters
+         * @param        array       array with coords e.g. [{latitude: 51.5143, longitude: 7.4138}, {latitude: 123, longitude: 123}, ...]
+         * @return       bool        true if the circle is intersects the given polygon
+         */
+        isCircleIntersectsPolygon: function(center, radius, polygon) {
+
+            return false;
+        },
+
+
+        /**
         * Shortcut for geolib.isPointInCircle()
         */
         withinRadius: function() {
